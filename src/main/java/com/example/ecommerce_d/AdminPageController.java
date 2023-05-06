@@ -13,24 +13,19 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class SellerPageController {
+public class AdminPageController {
     @FXML
-    TextField name,price,sellerid;
+    TextField email,userName,password,userType;
     @FXML
-    public void AddProduct(MouseEvent e) throws SQLException {
-        int productID=1;
-        ResultSet response2=HelloApplication.connection.executeQuery("select max(productID) as productID from product");
-        if(response2.next()){
-            productID=response2.getInt("productID")+1;
-        }
-        String query=String.format("insert into product values(%s,'%s',%s,'%s')",productID,name.getText(),price.getText(),sellerid.getText());
+    public void addUser(MouseEvent e) throws SQLException {
+        String query=String.format("insert into User values('%s','%s','%s','%s')",email.getText(),userName.getText(),password.getText(),userType.getText());
         int response=HelloApplication.connection.executeUpdate(query);
         if(response>0){
             Dialog<String> dialog=new Dialog<>();
             dialog.setTitle("Login");
             ButtonType type=new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
             dialog.getDialogPane().getButtonTypes().add(type);
-            dialog.setContentText("New Product is Added");
+            dialog.setContentText("New User is Added");
             dialog.showAndWait();
         }
     }

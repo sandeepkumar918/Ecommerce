@@ -7,7 +7,6 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ecommerce_d.SellerPageController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffb01f" height="500.0" stroke="BLACK" strokeType="INSIDE" width="500.0" />
@@ -22,6 +21,7 @@
       <TextField fx:id="name" layoutX="30.0" layoutY="98.0" />
       <TextField fx:id="price" layoutX="30.0" layoutY="178.0" />
       <TextField fx:id="sellerid" layoutX="30.0" layoutY="268.0" />
-      <Button layoutX="153.0" layoutY="318.0" mnemonicParsing="false" text="Add Product" onMouseClicked="#AddProduct"/>
+      <Button layoutX="93.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#homePage" text="Home"></Button>
+      <Button layoutX="153.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#AddProduct" text="Add Product" />
    </children>
 </AnchorPane>

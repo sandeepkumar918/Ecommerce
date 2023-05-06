@@ -26,7 +26,7 @@ public class LoginpageController {
             if(userType.equals("Seller")){
                 AnchorPane sellerPage= FXMLLoader.load(getClass().getResource("sellerpage.fxml"));
                 HelloApplication.root.getChildren().add(sellerPage);
-            }else{
+            }else if(userType.equals("Buyer")){
                 System.out.println("We are Logged in As Buyer");
                 ProductPage productPage=new ProductPage();
 
@@ -37,6 +37,10 @@ public class LoginpageController {
                 productPane.setLayoutY(100);
                 HelloApplication.root.getChildren().clear();
                 HelloApplication.root.getChildren().addAll(header.root,productPane);
+            }else if(userType.equals("Admin")){
+                System.out.println("We are Logged in As Admin");
+                AnchorPane adminPage=FXMLLoader.load(getClass().getResource("adminpage.fxml"));
+                HelloApplication.root.getChildren().add(adminPage);
             }
             System.out.println("This User is Present in User table");
         }else{
