@@ -4,9 +4,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -28,7 +31,6 @@ public class ProductPage {
                 price.setMinWidth(50);
                 buy.setText("Buy");
                 HBox productDetails=new HBox();
-
                 buy.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent actionEvent) {
@@ -92,6 +94,7 @@ public class ProductPage {
                         Order order=new Order();
                         try{
                             order.placeOrder(productId.getText());
+
                         }catch (SQLException se){
                             se.printStackTrace();
                         }
